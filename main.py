@@ -119,7 +119,7 @@ def process_speech():
                     "region": "us-east-1"
             }
             qs = urllib.urlencode(values)
-            gather.say(output_text, voice='brian', language='en')
+            resp.say(output_text, voice='brian', language='en')
             resp.hangup()
         elif dialog_state in ['Failed']:
             values = {"text": "I am sorry, there was an error.  Please call again!",
