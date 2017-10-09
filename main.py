@@ -52,7 +52,7 @@ def start():
     values = {"prior_text": output_text}
     qs = urllib.urlencode(values)
     action_url = "/process_speech?" + qs
-    gather = Gather(input="speech", hints=hints, language=twilio_asr_language, timeout="5", action=action_url, method="POST")
+    gather = Gather(input="speech", hints=hints, language=twilio_asr_language, timeout="3", action=action_url, method="POST")
     # TTS the bot response
 
     qs = urllib.urlencode(values)
@@ -98,7 +98,7 @@ def process_speech():
             values = {"prior_text": output_text, "prior_dialog_state": dialog_state}
             qs2 = urllib.urlencode(values)
             action_url = "/process_speech?" + qs2
-            gather = Gather(input="speech", hints=hints, language=twilio_asr_language, timeout="5", action=action_url,method="POST")
+            gather = Gather(input="speech", hints=hints, language=twilio_asr_language, timeout="3", action=action_url,method="POST")
             values = {"text": output_text,
                     "region": "us-east-1"
             }
@@ -138,7 +138,7 @@ def process_speech():
                   "prior_dialog_state": dialog_state}
         qs2 = urllib.urlencode(values)
         action_url = "/process_speech?" + qs2
-        gather = Gather(input="speech", hints=hints, language=twilio_asr_language, timeout="5", action=action_url, method="POST")
+        gather = Gather(input="speech", hints=hints, language=twilio_asr_language, timeout="3", action=action_url, method="POST")
         values = {"text": output_text,
                   "region": "us-east-1"
                   }
